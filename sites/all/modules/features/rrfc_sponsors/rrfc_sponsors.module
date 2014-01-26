@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the rrfc_sponsors feature.
+ */
+
+include_once 'rrfc_sponsors.features.inc';

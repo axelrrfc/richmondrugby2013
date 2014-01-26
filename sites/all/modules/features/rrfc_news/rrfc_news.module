@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the rrfc_news feature.
+ */
+
+include_once 'rrfc_news.features.inc';
