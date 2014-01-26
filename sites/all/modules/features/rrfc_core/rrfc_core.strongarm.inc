@@ -58,7 +58,7 @@ function rrfc_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_pattern';
-  $strongarm->value = 'content/[node:title]';
+  $strongarm->value = '[node:title]';
   $export['pathauto_node_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -86,7 +86,10 @@ function rrfc_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'path_alias_whitelist';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    'node' => TRUE,
+    'taxonomy' => TRUE,
+  );
   $export['path_alias_whitelist'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -116,6 +119,50 @@ function rrfc_core_strongarm() {
   $strongarm->name = 'theme_default';
   $strongarm->value = 'rrfc';
   $export['theme_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'theme_rrfc_settings';
+  $strongarm->value = array(
+    'toggle_logo' => 1,
+    'toggle_name' => 1,
+    'toggle_slogan' => 0,
+    'toggle_node_user_picture' => 0,
+    'toggle_comment_user_picture' => 1,
+    'toggle_comment_user_verification' => 1,
+    'toggle_favicon' => 1,
+    'toggle_main_menu' => 1,
+    'toggle_secondary_menu' => 1,
+    'default_logo' => 1,
+    'logo_path' => '',
+    'logo_upload' => '',
+    'default_favicon' => 1,
+    'favicon_path' => '',
+    'favicon_upload' => '',
+    'content_order_classes' => 'content-first ',
+    'front_heading_classes' => '',
+    'breadcrumb_classes' => '',
+    'body_bg_type' => '',
+    'body_bg_classes' => '',
+    'body_bg_path' => 'public://',
+    'body_bg_upload' => '',
+    'border_classes' => '',
+    'corner_classes' => '',
+    'magic_embedded_mqs' => 0,
+    'magic_css_excludes' => '',
+    'magic_footer_js' => 0,
+    'magic_library_head' => 0,
+    'magic_experimental_js' => 0,
+    'magic_js_excludes' => '',
+    'magic_rebuild_registry' => 0,
+    'magic_viewport_indicator' => 0,
+    'magic_modernizr_debug' => 0,
+    'magic_performance__active_tab' => 'edit-dev',
+    'magic_css_excludes_regex' => FALSE,
+    'magic_js_excludes_regex' => FALSE,
+  );
+  $export['theme_rrfc_settings'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
